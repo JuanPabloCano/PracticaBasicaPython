@@ -20,16 +20,11 @@ class MainController:
                 x = Exercise1()
                 print(x.isNumberOddOrEven())
             elif selection == 2:
-                a = input("Ingrese su nombre: ")
-                b = int(input("Ingrese la clave del departamento: "))
-                c = int(input("Ingrese los años trabajados: "))
+                a, b, c = cls.exercise_2_input()
                 x = Exercise2(a, b, c)
                 print(x.vacation_days())
             elif selection == 3:
-                print("Ingrese 3 números")
-                num1 = int(input())
-                num2 = int(input())
-                num3 = int(input())
+                num1, num2, num3 = cls.exercise_3_input()
                 x = Exercise3()
                 print(x.number_input(num1, num2, num3))
             elif selection == 4:
@@ -41,6 +36,21 @@ class MainController:
             elif selection == 6:
                 print("Muchas gracias por utilizar nuestros servicios, hasta la próxima")
                 break
+
+    @classmethod
+    def exercise_3_input(cls):
+        print("Ingrese 3 números")
+        num1 = int(input())
+        num2 = int(input())
+        num3 = int(input())
+        return num1, num2, num3
+
+    @classmethod
+    def exercise_2_input(cls):
+        a = input("Ingrese su nombre: ")
+        b = int(input("Ingrese la clave del departamento: "))
+        c = int(input("Ingrese los años trabajados: "))
+        return a, b, c
 
     @staticmethod
     def main_menu():
